@@ -1,1 +1,34 @@
-<button>Dalee</button>
+<form #proyectoForm="ngForm" (submit)="agregar(proyectoForm)">
+  <fieldset>
+    <legend>Agregar o Modificar Proyecto</legend>
+    <button *ngIf="id != null" id="eliminarBotonProyecto" (click)="eliminar(proyectoForm)">
+      <i  class="fas fa-trash"></i></button>
+
+    <div>
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre" id="nombreInput" #nombre="ngModel" [(ngModel)]="proyecto.nombre" required minlength="2">
+    </div>
+
+    <div>
+      <label for="img">Descripción</label>
+      <input type="text" name="descripcion" id="descripcion" #descripcion="ngModel" [(ngModel)]="proyecto.descripcion" required>
+    </div>
+
+    <div>
+      <label for="img">Tecnologías (separarlas por comas)</label>
+      <input type="text" name="tecnologias" id="tecnologias" #tecnologias="ngModel" [(ngModel)]="proyecto.tecnologias" required>
+    </div>
+
+    <div>
+      <label for="img">Imagen URL</label>
+      <input type="text" name="imagen" id="imagen" #imagen="ngModel" [(ngModel)]="proyecto.imagen" required>
+    </div>
+
+
+
+    <hr>
+    <button type="submit">
+      <i class="fas fa-share"></i> Enviar</button>
+
+  </fieldset>
+</form>

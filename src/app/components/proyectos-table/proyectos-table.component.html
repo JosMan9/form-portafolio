@@ -1,4 +1,5 @@
 <section>
+  <h1>Proyectos</h1>
   <div>
     <button (click)="botonAgregar()"> <i [class]="claseIcono"></i> {{tituloBoton}} </button>
   </div>
@@ -6,17 +7,27 @@
   <table>
     <thead>
       <tr>
-        <th>Icono</th>
-        <th>Tecnología</th>
+        <th>Imagen</th>
+        <th>Proyecto</th>
+        <th>Descripcion</th>
+        <th>Tecnologías</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tec of tecnologias">
+      <tr *ngFor="let proyecto of proyectos">
         <td>
-          <img [src]="tec.imagen" [alt]="tec.nombre">
+          <img [src]="proyecto.imagen" [alt]="proyecto.nombre">
         </td>
         <td>
-          <a routerLink="/tecnologias/{{tec.id}}"> {{tec.nombre}} </a>
+          <a routerLink="/proyectos/{{proyecto.id}}"> {{proyecto.nombre}} </a>
+        </td>
+        <td>
+          <p> {{proyecto.descripcion}} </p>
+        </td>
+        <td>
+          <ul *ngFor="let tec of proyecto.tecnologias">
+            <li> {{tec}} </li>
+          </ul>
         </td>
       </tr>
 

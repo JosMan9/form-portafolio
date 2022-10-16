@@ -30,7 +30,7 @@ export class ProyectosService {
     return this.proyectos;
    }
 
-   getProyecto( id: string) {
+   getProyecto(id: string) {
     this.tproyectoDoc = this.db.doc<ProyectoModel>(`proyectos/${id}`);
     this.proyecto = this.tproyectoDoc.snapshotChanges().pipe(
       map (accion => {
