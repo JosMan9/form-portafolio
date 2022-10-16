@@ -2,3 +2,19 @@ $primary-color: #4B0B0B;
 $color-letras: white;
 $background-hover-links: #F06868;
 
+$font-family: 'Libre Baskerville', serif;
+$box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+// propiedades de los botones
+$border-none-boton: none;
+$border-radius-boton: 15px;
+$cursor-boton: pointer;
+$box-shadow-boton: 10px 16px 14px 4px rgba(0, 0, 0, 0.28);
+$height-boton: 3em;
+$top-hover-boton: 5px;
+
+//propiedades del boton eliminar
+$border-radius-botonElominar: 90%;
+$width-botonEliminar: 5%;
+$box-shadow-eliminarBoton: -11px 12px 44px -1px rgba(0,0,0,0.39) inset;
+

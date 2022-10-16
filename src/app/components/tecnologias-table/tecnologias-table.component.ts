@@ -13,6 +13,7 @@ export class TecnologiasTableComponent implements OnInit {
   tecnologia: TecnologiaModel;
   isClick: boolean = false;
   tituloBoton: string = 'Agregar';
+  claseIcono: string = 'fas fa-compress'
 
   constructor(private tecService: TecnologiasService, private router: Router) {}
 
@@ -28,11 +29,13 @@ export class TecnologiasTableComponent implements OnInit {
       this.router.navigate(['/tecnologias/formulario']);
       this.isClick = true;
       this.tituloBoton = 'Ocultar';
+      this.claseIcono = 'fas fa-compress-arrows-alt';
     } else {
       this.router.navigate(['/tecnologias']);
       this.isClick = false;
       this.tituloBoton = 'Agregar';
-
+      this.claseIcono = 'fas fa-compress';
     }
   }
+
 }

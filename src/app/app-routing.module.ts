@@ -11,6 +11,9 @@ const routes: Routes = [
     path: 'tecnologias', component: TecnologiasTableComponent, children: [
       {
         path: 'formulario', component: TecnologiasFormComponent
+      },
+      {
+        path: ':id', component: TecnologiasFormComponent
       }
     ]
   },
@@ -18,6 +21,9 @@ const routes: Routes = [
     path: 'proyectos', component: ProyectosTableComponent, children: [
       {
         path: 'formulario', component: ProyectosFormComponent
+      },
+      {
+        path: ':id', component: ProyectosFormComponent
       }
     ]
   },

@@ -1,18 +1,21 @@
-<form>
+<form #tecForm="ngForm" (submit)="agregar(tecForm)">
   <fieldset>
-    <legend>Agregar Tecnología</legend>
+    <legend>Agregar o Modificar Tecnología</legend>
+    <button *ngIf="id != null" id="eliminarBoton" (click)="eliminar(tecForm)">
+      <i  class="fas fa-trash"></i></button>
 
     <div>
       <label for="nombre">Nombre</label>
-      <input type="text" name="nombre" id="nombreInput">
+      <input type="text" name="nombre" id="nombreInput" #nombre="ngModel" [(ngModel)]="tecnologia.nombre" required minlength="2">
     </div>
 
     <div>
       <label for="img">Imagen URL</label>
-      <input type="text" name="img-url" id="img-url">
-      <hr>
-      <button type="submit">Enviar</button>
+      <input type="text" name="imagen" id="img-url" #imagen="ngModel" [(ngModel)]="tecnologia.imagen" required>
     </div>
+    <hr>
+    <button type="submit">
+      <i class="fas fa-share"></i> Enviar</button>
 
   </fieldset>
 </form>

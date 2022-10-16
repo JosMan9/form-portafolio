@@ -1,1 +1,28 @@
-<p>proyectos-table works!</p>
+<section>
+  <div>
+    <button (click)="botonAgregar()"> <i [class]="claseIcono"></i> {{tituloBoton}} </button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Icono</th>
+        <th>Tecnología</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tec of tecnologias">
+        <td>
+          <img [src]="tec.imagen" [alt]="tec.nombre">
+        </td>
+        <td>
+          <a routerLink="/tecnologias/{{tec.id}}"> {{tec.nombre}} </a>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</section>
+
+<router-outlet></router-outlet>

@@ -6,20 +6,20 @@ section {
   div {
     button {
       margin-bottom: 50px;
-      border: none;
+      border: $border-none-boton;
       background-color: $primary-color;
       color: $color-letras;
-      border-radius: 15px;
+      border-radius: $border-radius-boton;
       width: 15em;
-      height: 3em;
-      cursor: pointer;
-      box-shadow: 10px 16px 14px 4px rgba(0, 0, 0, 0.28);
-      -webkit-box-shadow: 10px 16px 14px 4px rgba(0, 0, 0, 0.28);
-      -moz-box-shadow: 10px 16px 14px 4px rgba(0, 0, 0, 0.28);
+      height: $height-boton;
+      cursor: $cursor-boton;
+      box-shadow: $box-shadow-boton;
+      -webkit-box-shadow: $box-shadow-boton;
+      -moz-box-shadow: $box-shadow-boton;
 
       &:hover {
         position: relative;
-        top: 5px;
+        top: $top-hover-boton;
       }
     }
   }
@@ -37,7 +37,7 @@ section {
       font-size: 1em;
       font-family: sans-serif;
      // min-width: 450px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      box-shadow: $box-shadow;
     }
 
     tbody {

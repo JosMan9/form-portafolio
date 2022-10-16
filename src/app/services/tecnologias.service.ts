@@ -10,6 +10,7 @@ export class TecnologiasService {
   tecColeccion: AngularFirestoreCollection<TecnologiaModel>;
   tecDoc: AngularFirestoreDocument<TecnologiaModel>;
   tecs: Observable<TecnologiaModel[]>;
+  tec: Observable<TecnologiaModel>;
 
   constructor(private db: AngularFirestore) {
     this.tecColeccion = db.collection(`tecnologias`, ref => ref.orderBy('nombre', 'asc'));
@@ -27,5 +28,36 @@ export class TecnologiasService {
     );
 
     return this.tecs;
+  }
+
+  getTec(id: string) {
+    this.tecDoc = this.db.doc<TecnologiaModel>(`tecnologias/${id}`);
+    this.tec = this.tecDoc.snapshotChanges().pipe(
+      map( accion => {
+        if(accion.payload.exists === false) {
+          return null;
+        } else {
+          const datos = accion.payload.data() as TecnologiaModel;
+          datos.id = accion.payload.id;
+          return datos;
+        }
+      })
+    );
+    return this.tec;
+
+  }
+
+  agregarTec(tec: TecnologiaModel) {
+    this.tecColeccion.add(tec);
+  }
+
+  modificarTec(tec: TecnologiaModel) {
+    this.tecDoc = this.db.doc(`tecnologias/${tec.id}`);
+    this.tecDoc.update(tec);
+  }
+
+  eliminarTec(tec: TecnologiaModel) {
+    this.tecDoc = this.db.doc(`tecnologias/${tec.id}`);
+    this.tecDoc.delete();
   }
 }

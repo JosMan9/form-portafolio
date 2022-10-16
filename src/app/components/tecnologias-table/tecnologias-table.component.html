@@ -1,6 +1,6 @@
 <section>
   <div>
-    <button (click)="botonAgregar()"> {{tituloBoton}} </button>
+    <button (click)="botonAgregar()"> <i [class]="claseIcono"></i> {{tituloBoton}} </button>
   </div>
 
   <table>
@@ -16,7 +16,7 @@
           <img [src]="tec.imagen" [alt]="tec.nombre">
         </td>
         <td>
-          <a href=""> {{tec.nombre}} </a>
+          <a routerLink="/tecnologias/{{tec.id}}"> {{tec.nombre}} </a>
         </td>
       </tr>
 
