@@ -1,0 +1,28 @@
+<section>
+  <div>
+    <button (click)="botonAgregar()"> {{tituloBoton}} </button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Icono</th>
+        <th>Tecnología</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tec of tecnologias">
+        <td>
+          <img [src]="tec.imagen" [alt]="tec.nombre">
+        </td>
+        <td>
+          <a href=""> {{tec.nombre}} </a>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</section>
+
+<router-outlet></router-outlet>

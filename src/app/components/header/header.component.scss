@@ -1,0 +1,50 @@
+@import '../../../scss/variables';
+
+header {
+  background-color: $primary-color;
+  color: $color-letras;
+  margin-left: -10px;
+  margin-top: -10px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  i {
+    position: relative;
+    top: 1.5em;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    align-self: flex-start;
+  }
+
+  h1 {
+    font-family: 'Libre Baskerville', serif;
+  }
+
+  nav {
+    width: 20%;
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      li {
+        list-style: none;
+
+         a{
+          text-decoration: none;
+          color: $color-letras;
+          font-size: 1.5em;
+
+          &:hover {
+            color: $background-hover-links;
+          }
+         }
+      }
+    }
+  }
+}
+
+
